@@ -628,7 +628,13 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>has a need to manage a significant number of contacts</p>
+<p>wishes to learn new materials by retrieval learning and self-testing</p>
+</li>
+<li>
+<p>is an independent learner</p>
+</li>
+<li>
+<p>contents of learning are largely textual</p>
 </li>
 <li>
 <p>prefer desktop apps over other types</p>
@@ -645,7 +651,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: allow effective reinforcement learning of textual content by answering using CLI input to a question prompt from a GUI</p>
 </div>
 </div>
 </div>
@@ -673,39 +679,27 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student with subjects of different language mediums</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add flashcards of differing languages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can customise my flashcards to the subject I am interested to do</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user creating flash cards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save collections of thematically similar flash cards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can share my cards easily to other users</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user that takes flash card tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select an option out of four that best matches the front of a flash card</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can check that I have understood the concept the flash card aims to impart</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a person by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of persons without having to go through the entire list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many persons in the address book</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort persons by name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate a person easily</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beginner user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access a help page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i can learn about the features at a glance</p></td>
 </tr>
 </tbody>
 </table>
@@ -718,25 +712,19 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>FlashCard Pro</code> and the <strong>Actor</strong> is the <code>learner</code>, unless specified otherwise)</p>
 </div>
-<h3 id="use-case-delete-person" class="discrete">Use case: Delete person</h3>
+<h3 id="use-case-create-a-deck-of-cards" class="discrete">Use case: Create a deck of cards</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>Learner creates a new empty deck and specifies the name of the deck of cards.</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
-</li>
-<li>
-<p>User requests to delete a specific person in the list</p>
-</li>
-<li>
-<p>AddressBook deletes the person</p>
+<p>Learner adds individual cards to the deck and specifies the content of the front and back of the cards.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -749,25 +737,112 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. FlashCard Pro detects deck name provided by learner is identical to an existing deck of cards in the library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. FlashCard Pro informs the learner that deck creation is unsuccessful.</p>
+</li>
+<li>
+<p>1a2. Learner creates a new deck with another unique deck name.</p>
+</li>
+<li>
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</li>
+<li>
+<p>Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2a. FlashCard Pro detects no front and/or back content specified by the learner.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. FlashCard Pro informs the learner that card creation is unsuccessful.</p>
+</li>
+<li>
+<p>2a2. Learner creates a new card with the correct front and/or back content.</p>
+</li>
+<li>
+<p>Steps 2a1-2a2 are repeated until the format of the command entered is correct.</p>
+<div class="paragraph">
+<p>(Was wondering if FlashCard Pro should create the deck, but with a numbering like untitled_1, untitled_2 etc)</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-start-a-untimed-test" class="discrete">Use case: Start a untimed test</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Learner starts untimed test with a deck of cards by specifying deck name.</p>
+</li>
+<li>
+<p>FlashCard Pro begins test.</p>
+</li>
+<li>
+<p>FlashCard Pro flashes text on the front of a flash card to learner.</p>
+</li>
+<li>
+<p>FlashCard Pro waits for learner&#8217;s answer.</p>
+</li>
+<li>
+<p>Learner enters answer.</p>
+</li>
+<li>
+<p>FlashCard Pro matches answer with text on back of flash card.</p>
+</li>
+<li>
+<p>FlashCard Pro informs learner about correctness of the learner&#8217;s answer.</p>
+</li>
+<li>
+<p>FlashCard Pro displays the correct answer, the text on the back of the flash card.</p>
+<div class="paragraph">
+<p>Steps 3-8 are repeated until all the flash cards in the deck are completed.</p>
+</div>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a1. AddressBook shows an error message.</p>
+</ol>
+</div>
+<h3 id="use-case-import-an-existing-deck-of-cards-from-a-json-file" class="discrete">Use case: Import an existing deck of cards from a JSON file</h3>
 <div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Learner specifies the filepath of the deck of cards to import, in a JSON file format.</p>
+</li>
+<li>
+<p>FlashCard Pro loads the file in the filepath.</p>
+</li>
+<li>
+<p>FlashCard Pro parses the fields in the JSON file.</p>
+</li>
+<li>
+<p>FlashCard Pro constructs the deck of cards.</p>
+</li>
+<li>
+<p>FlashCard Pro stores the deck of cards in the library.</p>
+<div class="paragraph">
+<p>Use case ends.
+* 2a. FlashCard Pro detects filepath is invalid.
+<strong> 2a1. FlashCard Pro informs the learner that import of deck of cards is unsuccessful.
+* 2b. FlashCard Pro detects that filepath does not lead to a JSON file.
+</strong> 2b1. FlashCard Pro informs the learner that import of deck of cards is unsuccessful.</p>
 </div>
 </li>
-</ul>
-</div>
-</li>
-</ul>
+</ol>
 </div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
@@ -787,6 +862,9 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+<li>
+<p>Should handle text input of english alphabets.</p>
 </li>
 </ol>
 </div>
@@ -958,4 +1036,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-02 12:48:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-10-03 14:38:45 UTC</div></div></div></body></html>
