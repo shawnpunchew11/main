@@ -1,12 +1,11 @@
 package dream.fcard.model;
 
-import static dream.fcard.model.cards.Priority.HIGH_PRIORITY;
-import static dream.fcard.model.cards.Priority.LOW_PRIORITY;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import dream.fcard.logic.stats.DeckStats;
+import dream.fcard.logic.stats.Statistics;
 import dream.fcard.logic.storage.Schema;
 import dream.fcard.model.cards.FlashCard;
 import dream.fcard.model.exceptions.IndexNotFoundException;
@@ -33,6 +32,11 @@ public class Deck implements JsonInterface {
     private ArrayList<FlashCard> lowPriorityList;
 
     /**
+     * Statistics for this deck.
+     */
+    private Statistics deckStats;
+
+    /**
      * Constructor to create a Deck object with no name and cards.
      */
     public Deck() {
@@ -41,6 +45,8 @@ public class Deck implements JsonInterface {
 
         highPriorityList = new ArrayList<>();
         lowPriorityList = new ArrayList<>();
+
+        deckStats = new DeckStats();
     }
 
     /**
@@ -80,16 +86,16 @@ public class Deck implements JsonInterface {
         for (int i = 0; i < list.size(); i++) {
             FlashCard card = list.get(i);
 
-            boolean isHighPriorityCard = card.getPriority() == HIGH_PRIORITY;
-            boolean isLowPriorityCard = card.getPriority() == LOW_PRIORITY;
-
-            if (isHighPriorityCard) {
-                highPriorityList.add(card);
-            }
-
-            if (isLowPriorityCard) {
-                lowPriorityList.add(card);
-            }
+            //boolean isHighPriorityCard = card.getPriority() == HIGH_PRIORITY;
+            //boolean isLowPriorityCard = card.getPriority() == LOW_PRIORITY;
+            //
+            //if (isHighPriorityCard) {
+            //    highPriorityList.add(card);
+            //}
+            //
+            //if (isLowPriorityCard) {
+            //    lowPriorityList.add(card);
+            //}
         }
     }
 
@@ -118,6 +124,21 @@ public class Deck implements JsonInterface {
      */
     public void addNewCard(FlashCard newCard) {
         cards.add(newCard);
+    }
+
+    /**
+     * Returns a boolean value, if user provided index is valid.
+     * Checks if a user provided index is valid.
+     * Uses provide index that is 1-based, i.e. 1, 2, 3, etc.
+     * If index provided is within 1, 2, 3, ..., last card, then it is valid and return true.
+     * Else return false.
+     *
+     * @param indexProvided Boolean indicating if index provided by user is valid.
+     * @return True if valid, false if invalid.
+     */
+    private boolean isIndexProvidedByUserValid(int indexProvided) {
+        System.out.println(cards.size());
+        return indexProvided <= cards.size() && indexProvided > 0;
     }
 
     /**
@@ -152,6 +173,11 @@ public class Deck implements JsonInterface {
         }
         FlashCard cardToChange = cards.get(indexProvided - 1);
         cardToChange.editFront(newFront);
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 
     /**
@@ -191,7 +217,16 @@ public class Deck implements JsonInterface {
     }
 
     /**
-     * Returns list storing all High priority FlashCards.
+     * Sets the name of the deck.
+     *
+     * @param deckName the name of the deck.
+     */
+    public void setDeckName(String deckName) {
+        this.deckName = deckName;
+    }
+
+    /**
+     * Returns queue storing all high priority flashcards.
      *
      * @return ArrayList of FlashCards of priority level, High.
      */
@@ -256,18 +291,13 @@ public class Deck implements JsonInterface {
         int chosenCardIndex = rand.nextInt(list.size());
         return list.get(chosenCardIndex);
     }
-
-    /**
-     * Returns a boolean value, if user provided index is valid.
-     * Checks if a user provided index is valid.
-     * Uses provide index that is 1-based, i.e. 1, 2, 3, etc.
-     * If index provided is within 1, 2, 3, ..., last card, then it is valid and return true.
-     * Else return false.
-     *
-     * @param indexProvided Boolean indicating if index provided by user is valid.
-     * @return True if valid, false if invalid.
-     */
-    private boolean isIndexProvidedByUserValid(int indexProvided) {
-        return indexProvided <= cards.size() && indexProvided > 0;
-    }
+    //
+    ///**
+    // *
+    // *
+    // * @return
+    // */
+    //private boolean isIndexProvidedByUserValid(int indexProvided) {
+    //    return indexProvided <= cards.size() && indexProvided > 0;
+    //}
 }
