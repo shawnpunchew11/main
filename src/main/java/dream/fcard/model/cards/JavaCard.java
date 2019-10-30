@@ -6,17 +6,14 @@ import dream.fcard.model.TestCase;
 import dream.fcard.model.exceptions.IndexNotFoundException;
 
 /**
- * Card that evaluates input as javascript code whose output has to match back of card.
- * TODO wait for Haliq's javacard and javascript card updated file saving functionality
+ * A Java card.
  */
 public class JavaCard extends FlashCard {
 
     private String question;
     private ArrayList<TestCase> testCases;
-    private String attempt;
 
     public JavaCard(String question, ArrayList<TestCase> testCases) {
-        this.question = question;
         this.testCases = testCases;
     }
 
@@ -47,8 +44,13 @@ public class JavaCard extends FlashCard {
         //irrelevant
     }
 
-    @Override
-    public FlashCard duplicate() {
-        return new JavaCard(question, testCases);
-    }
+    //@Override
+    //public boolean hasChoices() {
+    //    return false;
+    //}
+    //
+    //@Override
+    //public int compareTo(FlashCard card) {
+    //    return 0;
+    //}
 }
